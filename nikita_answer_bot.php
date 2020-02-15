@@ -4,7 +4,7 @@ $token = "871852857:AAG5BPMscXpTAO3zMGZX6xzY_fy65a52GIk";
 
 $comand = "sendMessage";
 
-$post = $_POST['Update'];
+$post = implode('Z',$_POST);
 
 $answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=$post");
 
