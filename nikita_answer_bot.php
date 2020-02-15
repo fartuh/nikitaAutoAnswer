@@ -4,9 +4,11 @@ $token = "871852857:AAG5BPMscXpTAO3zMGZX6xzY_fy65a52GIk";
 
 $comand = "sendMessage";
 
-//$post = implode('Z',$_POST);
+$json = file_get_contents("php://input");
+$post = json_decode($json);
+$post = $post['message'];
 
-$answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=hello");
+$answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=$post");
 
 $data = json_decode($answer);
 
