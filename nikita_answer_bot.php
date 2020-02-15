@@ -6,7 +6,7 @@ $comand = "SendMessage";
 
 //$answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=5744267&text=");
 
-$data = json_decode($answer);
+//$data = json_decode($answer);
 
 echo "<pre>";
 print_r($_POST);
