@@ -11,7 +11,9 @@ $comand = "sendMessage";
 $json = file_get_contents("php://input");
 
 $data = json_decode($json);
-
+if(isset($data->message->from->username) && $data->message->from->username != "")
+    $msg = "username: " . $data->message->from->username . "; name: " . $data->message->from->first_name . "; text: " . $data->message->text;
+else
 $msg = "id: " . $data->message->from->id . "; name: " . $data->message->from->first_name . "; text: " . $data->message->text;
 
 
