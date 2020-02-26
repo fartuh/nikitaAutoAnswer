@@ -8,9 +8,9 @@ $comand = "sendMessage";
 //$post = json_decode($json);
 //$post = $post['message'];
 
-$json = file_get_contents("php://input")
+$json = file_get_contents("php://input");
 
-$answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=hi");
+$answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=$json");
 
 $data = json_decode($answer);
 
