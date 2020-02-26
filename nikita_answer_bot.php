@@ -10,9 +10,12 @@ $comand = "sendMessage";
 
 $json = file_get_contents("php://input");
 
-$answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=$json");
+$data = json_decode($json);
 
-$data = json_decode($answer);
+$msg = $data->update_id;
+
+$answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=$msg");
+
 
 echo "<pre>";
 print_r($data);
