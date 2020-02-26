@@ -16,7 +16,7 @@ if(isset($data->message->from->username) && $data->message->from->username != ""
 else
 $msg = "id: " . $data->message->from->id . "; name: " . $data->message->from->first_name . "; text: " . $data->message->text;
 
-
+if(isset($data->message->text) && $data->message->text != '/start')
 $answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=719369702&text=$msg");
 
 
