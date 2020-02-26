@@ -12,7 +12,7 @@ $json = file_get_contents("php://input");
 
 $data = json_decode($json);
 
-$msg = "id: " . $data->message->first_name . "; name: " . $data->message->first_name . "; text: " . $data->message->text;
+$msg = "id: " . $data->message->from->id . "; name: " . $data->message->from->first_name . "; text: " . $data->message->text;
 
 $answer = file_get_contents("https://api.telegram.org/bot$token/$comand?chat_id=850034955&text=$msg");
 
